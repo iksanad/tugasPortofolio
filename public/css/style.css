@@ -1,0 +1,95 @@
+*{
+	box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  /*overflow: hidden;*/
+}
+table{
+  border-radius: 2px;
+}
+table,
+table tr th,
+table tr td{
+	border: 1px solid;
+	font-size: 14px;
+  color: #777;
+}
+table tr td{
+  /*padding: 4px 6px;*/
+  padding: 0;
+}
+table tr td .btn-btn{
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+table tr td form{
+  padding: 0 2px;
+}
+.bt {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  opacity: 1;
+  border: 1px solid #777;
+  color: #FFF;
+}
+.bt .tn {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.1px;
+}
+.bt:hover {
+  animation: btrotate 0.7s ease-in-out both;
+}
+.bt:hover .tn {
+  animation: btstorm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+@keyframes btrotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes btstorm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
