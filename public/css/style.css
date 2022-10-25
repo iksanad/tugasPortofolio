@@ -93,3 +93,16 @@ table tr td form{
     transform: translate3d(0, 0, 0) translateZ(0);
   }
 }
+.tit {
+  font-size: 30px;
+  font-weight: 500;
+  color: #777;
+}
+
+@media only screen and (max-width: 768px) {
+  .tit {
+    font-size: 20px;
+    font-weight: 500;
+    color: #777;
+  }
+}

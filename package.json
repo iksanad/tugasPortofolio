@@ -10,5 +10,10 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "vite": "^3.0.0"
+    },
+    "dependencies": {
+        "datatables.net": "^1.12.1",
+        "datatables.net-responsive": "^2.3.0",
+        "datatables.net-responsive-dt": "^2.3.0"
     }
 }

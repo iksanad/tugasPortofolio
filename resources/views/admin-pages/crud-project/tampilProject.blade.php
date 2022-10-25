@@ -1,5 +1,5 @@
 @if ($project->isEmpty())
-		<h6 class="text-center">Siswa belum memiliki Project</h6>
+		<h6 class="text-center text-danger"><b>Siswa belum memiliki Project</b></h6>
 	@else
 	@foreach ($project as $p)
 		<div class="card mb-3" style="box-shadow: none; border-radius: 0; border: 1px solid #aaa">

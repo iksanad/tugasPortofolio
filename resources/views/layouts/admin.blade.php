@@ -24,9 +24,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <hr style="margin: 0 0 20px;">
+                    <!-- <hr style="margin: 0 0 20px;"> -->
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">@yield('admin-title')</h1>
+                    <p class="tit mt-3">{{ $title }}</p>
                     @yield('admin-content')
 
                 </div>

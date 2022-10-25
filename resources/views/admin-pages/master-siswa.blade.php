@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('admin-content')
+
     @if (Session::has('message'))
         <div class="alert alert-success">
             {{ Session::get('message') }}
@@ -20,64 +21,57 @@
             Data Siswa
         </div>
         <div class="card-body">
-       		<table id="datatablesSimple">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>NISN</th>    
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Action</th>
-                    </tr>
-                </thead/>
+            <div class="table-responsive">
+           		<table class="table table-hover">
+                    <thead>
+                            <th>No.</th>
+                            <th>NISN</th>    
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Action</th>
+                    </thead/>
 
-                <tbody>
-                    @foreach($siswa as $s)
-                    <tr>
-                       	<td> {{ $n++ }} </td>
-                        <td> {{ $s->nisn }} </td>
-                       	<td> {{ $s->nama }} </td>
-                      	<td> {{ $s->alamat }} </td>
-                       	<td> {{ $s->jk }} </td>
-                        <td>
-                        	<div class="row" style="justify-content: center; position: relative;">
-                                @if (Auth::user()->role == 'admin')
-                                <form>
-                                    <a class="btn-btn" href="{{ route('master-siswa.show', $s->id)}}" style="text-decoration: none;">
-                                        <span class="bt bg-gradient-primary">
-                                            <i class="tn fas fa-eye"></i>
-                                        </span>
-                                    </a>
-                                </form>
-                                <form>
-                                    <a class="btn-btn" href="{{ route('master-siswa.edit', $s->id)}}" style="text-decoration: none;">
-                                        <span class="bt bg-gradient-warning">
-                                           <i class="tn far fa-edit"></i>
-                                        </span>
-                                    </a>
-                                </form>
-                                <form>
-                                    <a class="btn-btn" href="{{ route('master-siswa.hapus', $s->id)}}" style="text-decoration: none;" onclick="return confirm('Kamu yakin??')">
-                                        <span class="bt bg-gradient-danger">
-                                           <i class="tn far fa-trash-alt"></i>
-                                        </span>
-                                    </a>
-                                </form>
-                                @endif
-                                @if (Auth::user()->role == 'walas')
-                                <form>
-                                    <a class="btn bg-gradient-primary text-white" href="{{ route('master-siswa.show', $s->id)}}" style="text-decoration: none;">
-                                        Lihat
-                                    </a>
-                                </form>
-                                @endif
-        					</div>
-                        </td>
-          	        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    <tbody>
+                        @foreach($siswa as $s)
+                        <tr>
+                           	<td> {{ $n++ }} </td>
+                            <td> {{ $s->nisn }} </td>
+                           	<td> {{ $s->nama }} </td>
+                          	<td> {{ $s->alamat }} </td>
+                           	<td> {{ $s->jk }} </td>
+                            <td>
+                            	<div class="row" style="justify-content: center; position: relative;">
+                                    <form>
+                                        <a class="btn-btn" href="{{ route('master-siswa.show', $s->id)}}" style="text-decoration: none;">
+                                            <span class="bt bg-gradient-primary">
+                                                <i class="tn fas fa-eye"></i>
+                                            </span>
+                                        </a>
+                                    </form>
+                                    @if (Auth::user()->role == 'admin')
+                                    <form>
+                                        <a class="btn-btn" href="{{ route('master-siswa.edit', $s->id)}}" style="text-decoration: none;">
+                                            <span class="bt bg-gradient-warning">
+                                               <i class="tn far fa-edit"></i>
+                                            </span>
+                                        </a>
+                                    </form>
+                                    <form>
+                                        <a class="btn-btn" href="{{ route('master-siswa.hapus', $s->id)}}" style="text-decoration: none;" onclick="return confirm('Kamu yakin??')">
+                                            <span class="bt bg-gradient-danger">
+                                               <i class="tn far fa-trash-alt"></i>
+                                            </span>
+                                        </a>
+                                    </form>
+                                    @endif
+            					</div>
+                            </td>
+              	        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
