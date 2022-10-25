@@ -3,6 +3,28 @@
 <head>
     <title>Iksan Arya Dinata {{ $title }}</title>
     @include('components.head')
+
+    <style>
+    	* {
+    		font-family: 'Poppins', sans-serif;
+    	}
+    	.jumbotron {
+    		padding: 6rem 1rem;
+    		background: #e2edff;
+    	}
+    	.nav-link {
+    		color: white;
+    	}
+    	#projects {
+    		background: #e2edff;
+    	}
+    	section {
+    		padding-top: 5rem;
+    	}
+    	.container2 {
+    		width: 100%;
+    	}
+    </style>
 </head>
 <body>
     @include('components.navbar')
